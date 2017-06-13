@@ -111,7 +111,6 @@ function seafile_app_and_config {
 	echo "Copy Seafile Server app and config..."
 	cp -r $SOURCEFOLDER"ccnet"/ $LOCALBACKUPTEMPDIR/
 	cp -r $SOURCEFOLDER"conf"/ $LOCALBACKUPTEMPDIR/
-	cp -r $SOURCEFOLDER"customSCRIPTS"/ $LOCALBACKUPTEMPDIR/
 	cp -r $SOURCEFOLDER"seahub-data"/ $LOCALBACKUPTEMPDIR/
 	cp -r $SOURCEFOLDER"seafile-server-latest"/ $LOCALBACKUPTEMPDIR/
 }
