@@ -107,6 +107,15 @@ function autostartbackup {
 	cp /etc/init.d/seafile-server $LOCALBACKUPTEMPDIR/ 
 }
 
+function seafile_app_and_config {
+	echo "Copy Seafile Server app and config..."
+	cp -r $SOURCEFOLDER"ccnet"/ $LOCALBACKUPTEMPDIR/
+	cp -r $SOURCEFOLDER"conf"/ $LOCALBACKUPTEMPDIR/
+	cp -r $SOURCEFOLDER"customSCRIPTS"/ $LOCALBACKUPTEMPDIR/
+	cp -r $SOURCEFOLDER"seahub-data"/ $LOCALBACKUPTEMPDIR/
+	cp -r $SOURCEFOLDER"seafile-server-latest"/ $LOCALBACKUPTEMPDIR/
+}
+
 function somemagic {
 	# looking for 14 days old backups and delete them - NOT the last 14 backups, 14 days back BY DATE !!
 	echo "Deleteting backup files older than 14 days..."
@@ -151,6 +160,7 @@ sqldump
 sqlconfigbackup
 webserverbackup
 autostartbackup
+seafile_app_and_config
 startseafile
 somemagic
 checktargetandrunbackup
